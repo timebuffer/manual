@@ -11,14 +11,14 @@
 </head>
 <body>
     <h1>Manual Builder</h1>
-    <button id="authenticate">Authenticate with Evernote</button>
+    <button id="authenticate" disabled="true">Authenticate with Evernote</button>
     <form id="manual-form">
-        <input type="text" id="manual-title" placeholder="Title" required />
-        <textarea id="manual-content" placeholder="Write your manual here..." required></textarea>
+        <input type="text" id="manual-title" placeholder="Title" required /> <br>
+        <textarea style="width: 700px; height: 300px;" id="manual-content" placeholder="Write your manual here..." required></textarea><br>
         <select id="location">
-            <option value="evernote">Evernote</option>
             <option value="file">Desktop (.txt file)</option>
-            <option value="onedrive">OneDrive</option>
+            <option value="evernote" disabled="true">Evernote </option>
+            <option value="onedrive" disabled="true">OneDrive</option>
         </select>
         <button type="submit">Save Manual</button>
     </form>

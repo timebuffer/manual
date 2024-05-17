@@ -1,0 +1,110 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Environment variables
+backend/.env
+frontend/.env
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS specific files
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+
+# Compiled binary addons (for node-gyp)
+backend/build/
+frontend/build/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Parcel cache
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generated output
+.nuxt
+dist/
+
+# Gatsby files
+.cache/
+public/
+
+# TernJS
+.tern-port
+
+# Stylelint
+.stylelintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Bower dependency directory
+bower_components
+
+# Nuxt.js build output
+.nuxt
+
+# Storybook files
+out
+storybook-static
+
+# Jest snapshots
+*.snap
+
+# Firebase
+.firebaserc
+.firebase/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# IntelliJ IDEA
+.idea/
+
+# VS Code
+.vscode/
+
+# SASS cache
+.sass-cache/
+
+# React Native
+.expo/
+.expo-shared/

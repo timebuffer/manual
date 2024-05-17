@@ -1,4 +1,4 @@
-const Evernote = require('evernote').Evernote;
+/*const Evernote = require('evernote').Evernote;
 
 const client = new Evernote.Client({
     consumerKey: process.env.EVERNOTE_CONSUMER_KEY,
@@ -63,3 +63,4 @@ module.exports = {
     callback,
     saveManual
 };
+*/
