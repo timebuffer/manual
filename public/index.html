@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Builder</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #manuals { margin-top: 20px; }
+        .manual { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Manual Builder</h1>
+    <button id="authenticate">Authenticate with Evernote</button>
+    <form id="manual-form">
+        <input type="text" id="manual-title" placeholder="Title" required />
+        <textarea id="manual-content" placeholder="Write your manual here..." required></textarea>
+        <select id="location">
+            <option value="evernote">Evernote</option>
+            <option value="file">Desktop (.txt file)</option>
+            <option value="onedrive">OneDrive</option>
+        </select>
+        <button type="submit">Save Manual</button>
+    </form>
+
+    <div id="manuals"></div>
+
+    <script>
+        document.getElementById('authenticate').onclick = function() {
+            window.location.href = '/oauth';
+        };
+
+        document.getElementById('manual-form').onsubmit = function(event) {
+            event.preventDefault();
+            const title = document.getElementById('manual-title').value;
+            const content = document.getElementById('manual-content').value;
+            const location = document.getElementById('location').value;
+            
+            fetch('/save_manual', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, content, location })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                loadManuals();
+            });
+        };
+
+        function loadManuals() {
+            fetch('/manuals')
+            .then(response => response.json())
+            .then(manuals => {
+                const manualsDiv = document.getElementById('manuals');
+                manualsDiv.innerHTML = '';
+                manuals.forEach(manual => {
+                    const manualDiv = document.createElement('div');
+                    manualDiv.className = 'manual';
+                    manualDiv.innerHTML = `<h2>${manual.title}</h2><p>${manual.content}</p>`;
+                    manualsDiv.appendChild(manualDiv);
+                });
+            });
+        }
+
+        window.onload = loadManuals;
+    </script>
+</body>
+</html>
